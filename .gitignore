@@ -1,1 +1,5 @@
-main.exe
+
+# executables
+*.exe
+*.out
+
