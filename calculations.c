@@ -1,9 +1,31 @@
+#include <math.h>
+
 #include "calculations.h"
+
+double TO_RADIANS = M_PI / 180;
+double TO_DEGREES = 180 / M_PI;
 
 Vector getDistanceVector(Location currentLocation, Location targetLocation) {
     Vector distanceVector;
-    distanceVector.magnitude = 0.0;
-    distanceVector.angle = 0,0;
+
+    double y = (double) (targetLocation.lat - currentLocation.lat);
+    double x = (double) (targetLocation.lng - currentLocation.lng) * cos(currentLocation.lat * TO_RADIANS);
+    
+    double distance = 111.36 * sqrt((x*x + y*y));
+    double bearing = atan(fabs(x) / fabs(y)) * TO_DEGREES;
+
+    if (x > 0 && y > 0) {
+        // do nothing
+    } else if (x > 0 && y < 0) {
+        bearing = 180 - bearing;
+    } else if (x < 0 && y < 0) {    
+        bearing = bearing + 180;
+    } else {
+        bearing = 360.0 - bearing;
+    }
+
+    distanceVector.magnitude = distance;
+    distanceVector.angle = bearing;
     return distanceVector;
 }
 
