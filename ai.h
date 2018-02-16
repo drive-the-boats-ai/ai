@@ -4,6 +4,6 @@
 #include "structs.h"
 
 float getSpeedToSet(float distance, float relativeBearing);
-float getRudderToSet(Vector distanceVector, float relativeBearing);
+float getRudderToSet(float relativeBearing);
 
 #endif

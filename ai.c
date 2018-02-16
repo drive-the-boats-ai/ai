@@ -46,7 +46,11 @@ Percentage of turn to the left or right for the rudder to be sent to the rudder 
 */
 
 
-float getRudderToSet(Vector distanceVector, float relativeBearing) {
-	
-    return 0.0;
+float getRudderToSet(float relativeBearing) {
+	if(relativeBearing < -90.0){
+		relativeBearing = -90;
+	}else if(relativeBearing > 90.0){
+		relativeBearing = 90.0;
+	}
+    return relativeBearing / 90.0;
 }

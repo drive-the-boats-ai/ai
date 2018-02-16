@@ -10,7 +10,7 @@
 
 int main() {
 	
-	float NUM_BEARING_TESTS = 30;
+	float NUM_BEARING_TESTS = 60;
 	float NUM_DISTANCE_TESTS = 30;
 	float START_DISTANCE = 100.0;
 	float DISTANCE_INC = START_DISTANCE / NUM_DISTANCE_TESTS;
@@ -18,12 +18,18 @@ int main() {
 
 	
 	
-
+	
     for(float distance = START_DISTANCE; distance > 0; distance -= DISTANCE_INC){
 		for(float relativeBearing = -180; relativeBearing < 180; relativeBearing += BEARING_INC){
 			float result = getSpeedToSet(distance, relativeBearing);
 			printf("Distance: %f Relative Bearing: %f Result: %f \n", distance, relativeBearing, result);
 		}
+	}
+	
+	
+	for(float relativeBearing = -180; relativeBearing < 180; relativeBearing += BEARING_INC){
+		float result = getRudderToSet(relativeBearing);
+		printf("Relative Bearing: %f Result: %f \n", relativeBearing, result);
 	}
 
     return 0;
