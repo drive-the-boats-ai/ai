@@ -36,6 +36,17 @@ float getSpeedToSet(float distance, float relativeBearing) {
 	
     return bearingSpeed * distanceSpeed;
 }
+/*
+Determines the rudder angle percentage to be set by the AI.
+Inputs:
+relativeBearing - floating point representation of the relative heading needed to get to the target in degrees
+
+Output:
+Percentage of turn to the left or right for the rudder to be sent to the rudder controller
+*/
+
+
 float getRudderToSet(Vector distanceVector, float relativeBearing) {
+	
     return 0.0;
 }
