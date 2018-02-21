@@ -22,8 +22,8 @@ int main() {
         Vector distanceVector = getDistanceVector(pose.location, targetLocation);
         float relativeBearing = getRelativeBearing(pose.heading, distanceVector.angle);
 
-        float speedToSet = getSpeedToSet(distanceVector, relativeBearing);
-        float rudderToSet = getRudderToSet(distanceVector, relativeBearing);
+        float speedToSet = getSpeedToSet(distanceVector.magnitude, relativeBearing);
+        float rudderToSet = getRudderToSet(relativeBearing);
 
         setSpeed(speedToSet);
         setRudder(rudderToSet);
