@@ -30,5 +30,14 @@ Vector getDistanceVector(Location currentLocation, Location targetLocation) {
 }
 
 float getRelativeBearing(float currentHeading, float targetHeading) {
-    return 0.0;
+    float diff = targetHeading - currentHeading;
+    if (fabs(diff) <= 180.0) {
+        return diff;
+    } else {
+        if (diff >= 0) {
+            return diff - 360.0f;
+        } else {
+            return diff + 360.0f;
+        }
+    }
 }
