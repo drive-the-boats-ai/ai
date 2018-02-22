@@ -29,6 +29,18 @@ Vector getDistanceVector(Location currentLocation, Location targetLocation) {
     return distanceVector;
 }
 
+// returns relative bearing in the range [-180, 180] 
+// negative bearings suggest a counter-clockwise turn
+// positive bearings suggest a clockwise turn
 float getRelativeBearing(float currentHeading, float targetHeading) {
-    return 0.0;
+    float diff = targetHeading - currentHeading;
+    if (fabs(diff) <= 180.0) {
+        return diff;
+    } else {
+        if (diff >= 0) {
+            return diff - 360.0f;
+        } else {
+            return diff + 360.0f;
+        }
+    }
 }
