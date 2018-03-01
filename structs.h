@@ -17,4 +17,17 @@ typedef struct Pose {
     Location location;
 } Pose;
 
+typedef struct Block {
+    int signature;
+    int x;
+    int y;
+    int width;
+    int height;
+} Block;
+
+typedef struct Blocks {
+    Block** blocks;
+    int length;
+} Blocks;
+
 #endif
