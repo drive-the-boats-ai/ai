@@ -44,3 +44,16 @@ float getRelativeBearing(float currentHeading, float targetHeading) {
         }
     }
 }
+
+BlockHeadings blocksToHeadings(Blocks blocks) {
+    BlockHeadings headings;
+    headings.length = blocks.length;
+
+    for(int i = 0; i < blocks.length; i++) {
+        headings.headings[i].left = 0;
+        headings.headings[i].right = 0;
+        headings.headings[i].severity = 0;
+    }
+
+    return headings;
+}

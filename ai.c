@@ -54,3 +54,13 @@ float getRudderToSet(float relativeBearing) {
 	}
     return relativeBearing / 90.0;
 }
+
+// Analyzes the obstacle headings to determine if an obstacle is in the way
+int getObstacleInWay(BlockHeadings obstacleHeadings, float relativeBearing,  float distance) {
+	return 0;
+}
+
+// Finds an intermediate bearing to send the boat to in order to avoid the obstacles
+float getIntermediateBearing(BlockHeadings obstacleHeadings, float relativeBearing, float distance) {
+	return 0.0;
+}

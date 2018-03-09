@@ -30,4 +30,14 @@ typedef struct Blocks {
     int length;
 } Blocks;
 
+typedef struct BlockHeading {
+    float left;
+    float right;
+    float severity;
+} BlockHeading;
+
+typedef struct BlockHeadings {
+    BlockHeading* headings;
+    int length;
+} BlockHeadings;
 #endif

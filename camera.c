@@ -17,7 +17,7 @@ Blocks boats;
 
 int newBlocksExist() {
     // get flag from driver team that signals if there are new blocks
-    // to be processed from the pixy
+    // to be processed from the pixy, and if so, set flag to 0
     return 0;
 }
 
